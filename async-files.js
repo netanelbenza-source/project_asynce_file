@@ -12,21 +12,29 @@ import fs from 'fs/promises'
 // })
 
 
-fs.readFile('input.txt','utf8',(err,data) =>{
-    if (err) return console.log(`error: ${err}`)
-    const toapper = data.toUpperCase()
-    fs.writeFile('output-upper.txt',toapper,'utf-8',(err)=>{
-        if (err) return console.log(`error :${err}`)
-            console.log("Everything ended successfully")
-    })   
+// fs.readFile('input.txt','utf8',(err,data) =>{
+//     if (err) return console.log(`error: ${err}`)
+//     const toapper = data.toUpperCase()
+//     fs.writeFile('output-upper.txt',toapper,'utf-8',(err)=>{
+//         if (err) return console.log(`error :${err}`)
+//             console.log("Everything ended successfully")
+//     })   
  
     
+// })
+
+// fs.readFile('input.txt','utf8')
+// .then((data) => console.log(`The data of file is : ${data}`))
+// .catch(err => console.log(`error:${err}`))
+
+
+fs.readFile('input.txt','utf8')
+.then((data) =>{
+    const upeerData = data.toUpperCase()
+    return fs.writeFile('output-upper.txt',upeerData)
 })
-
-fs.readFile('input.xt','utf8')
-.then((data) => console.log(`The data of file is : ${data}`))
+.then(()=> console.log("Everything ended successfully"))
 .catch(err => console.log(`error:${err}`))
-
 
 
 
