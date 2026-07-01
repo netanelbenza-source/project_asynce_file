@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'fs/promises'
 
 // fs.writeFile('input.txt','Heloo-word','utf8',(err)=> {
 //     if (err) return console.log(err)
@@ -22,6 +22,11 @@ fs.readFile('input.txt','utf8',(err,data) =>{
  
     
 })
+
+fs.readFile('input.xt','utf8')
+.then((data) => console.log(`The data of file is : ${data}`))
+.catch(err => console.log(`error:${err}`))
+
 
 
 
