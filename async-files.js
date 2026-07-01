@@ -28,13 +28,20 @@ import fs from 'fs/promises'
 // .catch(err => console.log(`error:${err}`))
 
 
-fs.readFile('input.txt','utf8')
-.then((data) =>{
-    const upeerData = data.toUpperCase()
-    return fs.writeFile('output-upper.txt',upeerData)
-})
-.then(()=> console.log("Everything ended successfully"))
+// fs.readFile('input.txt','utf8')
+// .then((data) =>{
+//     const upeerData = data.toUpperCase()
+//     return fs.writeFile('output-upper.txt',upeerData)
+// })
+// .then(()=> console.log("Everything ended successfully"))
+// .catch(err => console.log(`error:${err}`))
+
+
+
+Promise.all([fs.readFile('input.txt','utf8'),fs.readFile('output-upper.txt','utf8')])
+.then(response => console.log(response[0].length , response[1].length))
 .catch(err => console.log(`error:${err}`))
+
 
 
 
