@@ -1,14 +1,26 @@
 import fs from 'fs'
 
-fs.writeFile('input.txt','Heloo-word','utf8',(err)=> {
-    if (err) return console.log(err)
-    return console.log("The file write succssefuly")
+// fs.writeFile('input.txt','Heloo-word','utf8',(err)=> {
+//     if (err) return console.log(err)
+//     return console.log("The file write succssefuly")
 
-})
+// })
+
+// fs.readFile('input.txt','utf8',(err,data) =>{
+//     if (err) return console.log(`error: ${err}`)
+//         return console.log(`The data of file is : ${data}`)
+// })
+
 
 fs.readFile('input.txt','utf8',(err,data) =>{
     if (err) return console.log(`error: ${err}`)
-        return console.log(`The data of file is : ${data}`)
+    const toapper = data.toUpperCase()
+    fs.writeFile('output-upper.txt',toapper,'utf-8',(err)=>{
+        if (err) return console.log(`error :${err}`)
+            console.log("Everything ended successfully")
+    })   
+ 
+    
 })
 
 
