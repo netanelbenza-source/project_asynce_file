@@ -6,4 +6,11 @@ fs.writeFile('input.txt','Heloo-word','utf8',(err)=> {
 
 })
 
-fs.readFile('input.txt')
+fs.readFile('input.txt','utf8',(err,data) =>{
+    if (err) return console.log(`error: ${err}`)
+        return console.log(`The data of file is : ${data}`)
+})
+
+
+
+
